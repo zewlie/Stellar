@@ -1,4 +1,4 @@
-"""Q server."""
+"""Stellar server."""
 
 import random
 
