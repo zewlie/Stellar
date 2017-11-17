@@ -7,6 +7,9 @@ from flask import Flask, Markup, render_template, redirect, request, flash, sess
 from flask_debugtoolbar import DebugToolbarExtension
 from datetime import datetime
 
+from models import db, connect_to_db
+from models import User, Square
+
 app = Flask(__name__)
 
 # Required to use Flask sessions and the debug toolbar
@@ -31,7 +34,13 @@ BACK_TO_ROOT = "../../"
 def index():
     """Homepage."""
 
-    return render_template('index.html')
+    squares_dict = {}
+    squares = db.session.query(Square).filter.all()
+    for square in squares:
+      squares_dict[square.x][square.y] = square.fill
+
+
+    return render_template('index.html', squares_dict=squares_dict)
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the point

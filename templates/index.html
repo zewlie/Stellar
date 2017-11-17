@@ -12,26 +12,10 @@ Q
 
 {% block javascript %}
 <script>
-function gridColor(row, column) {
-  var color = "#79a753";
-  if (row < 4 && column < 4) {
-    color = "#ca5f4c";
-  };
-  if (row == 12 && column < 6) {
-    color = "#ca5f4c";
-  };
-  if (row < 5 && column == 12) {
-    color = "#ca5f4c";
-  };
-  if (row > 0 && row < 6 && column == 10) {
-    color = "#ca5f4c";
-  };
-  if (row > 6 && row < 13 && column == 7) {
-    color = "#ca5f4c";
-  };
-  console.log(row, column);
-  return color;
-}
+
+// handoff squares_dict here
+var gridHash = {};
+
 
 function gridData() {
   var data = new Array();
@@ -50,9 +34,9 @@ function gridData() {
       data[row].push({
         x: xpos,
         y: ypos,
-        color: gridColor(row, column),
         width: width,
         height: height,
+        color: "#fff",
         click: click
       })
       // increment the x position. I.e. move it over by 50 (width variable)
