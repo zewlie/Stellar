@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stellar | {% block title %} Title {% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://use.fontawesome.com/fbecb4a45a.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Static navbar -->
+      <nav class="navbar navbar-inverse bg-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">Stellar</a>
+          </div>
+
+  {% if 1==0 %}
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li {% if request.path == '/home' %} class="active" {% endif %}>
+                <a href="../../home"><b>Username</b></a>
+              </li>
+              <li {% if request.path == '/ponies' %} class="active" {% endif %}>
+                <a href="/ponies">my ponies</a>
+              </li>
+              <li {% if request.path == '/inventory' %} class="active" {% endif %}>
+                <a href="/inventory">my items</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">explore <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">browse ponies</a></li>
+                  <li><a href="#">stats & leaderboards</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="hidden-xs" {% if request.path == '/alerts' %} class="active" {% endif %}>
+                <a class="hidden-xs" href="../../messages"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></a></li>
+              <li class="hidden-xs" {% if request.path == '/settings' %} class="active" {% endif %}>
+                <a href="../../settings"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+              <li class="hidden-xs">
+                <a href="../../logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+
+  {% else %}
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li {% if request.path == '/login' %} class="active" {% endif %}>
+                <a href="../../login">login</a></li>
+              <li class="active">
+                <a href="../../register"><b>register</b></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+
+  {% endif %}
+
+        </div><!--/.nav-collapse -->
+    </nav>
+  </div>
+
+  <div class="container">
+
+      <div class="row">
+          <div class="col-sm-9 col-md-9 col-lg-10">
+              <div class="main-panel">
+
+  {% for message in get_flashed_messages() %}
+            <div class="flashed-messages alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              {{ message }}</div>
+          {% endfor %}
+
+  {% block content %} Content {% endblock %}
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../../static/js/chartjs/Chart.js"></script>
+{% block javascript %}{% endblock %}
+</body>
+
+<footer></footer>
+
+</html>
