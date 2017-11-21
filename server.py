@@ -11,6 +11,7 @@ from datetime import datetime
 
 from models import db, connect_to_db
 from models import User, Square
+import functions
 
 app = Flask(__name__)
 
