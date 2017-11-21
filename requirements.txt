@@ -2,8 +2,12 @@ blinker==1.4
 click==6.7
 Flask==0.12.2
 Flask-DebugToolbar==0.10.1
+Flask-Login==0.4.0
+Flask-SQLAlchemy==2.3.2
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
+passlib==1.7.1
+SQLAlchemy==1.1.15
 Werkzeug==0.12.2
 wheel==0.24.0

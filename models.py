@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask.ext.login import UserMixin
 from passlib.hash import pbkdf2_sha256
 
-SQLALCHEMY_TRACK_MODIFICATIONS = True
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 db = SQLAlchemy()
 
 
@@ -79,13 +79,13 @@ class Square(db.Model):
         """Provides helpful representation when printed."""
 
         return "<Square id={} coords={} fill={}>".format(self.id,
-                                                              (self.x + ", " + self.y),
-                                                              self.fill)
+                                                        (self.x + ", " + self.y),
+                                                         self.fill)
 
-    def __init__(self, user_id, name, value):
-        self.user_id = user_id
-        self.name = name
-        self.value = value
+    def __init__(self, x, y, fill):
+        self.x = x
+        self.y = y
+        self.fill = fill
 
 
 
