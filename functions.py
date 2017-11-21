@@ -6,5 +6,7 @@ def color_green(x, y):
                 return "#75ba3b"
             elif x < 7:
                 return "#75ba3b"
+    elif x > 11:
+        return "#fff"
     else:
-        return None
+        return

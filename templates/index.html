@@ -45,13 +45,14 @@ function gridData() {
       console.log(gridx, gridy);
       // increment the x position. I.e. move it over by 50 (width variable)
       xpos += width;
+      gridx += 1;
     }
     // reset the x position after a row is complete
     xpos = 1;
+    gridx = 0;
     // increment the y position for the next row. Move it down 50 (height variable)
     ypos += height; 
     // increment grid coords
-    gridx += 1;
     gridy += 1;
   }
   return data;
