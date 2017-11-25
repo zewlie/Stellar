@@ -1,12 +1,12 @@
 def color_green(x, y):
 
-    if x < 11:
-        if y > 0 and y < 12:
-            if y < 7:
+    if x < 12:
+        if y > 1 and y < 13:
+            if y < 8:
                 return "#75ba3b"
-            elif x < 7:
+            elif x < 8:
                 return "#75ba3b"
-    elif x > 11:
-        return "#fff"
+
+
     else:
         return

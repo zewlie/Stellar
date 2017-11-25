@@ -27,8 +27,8 @@ def create_users(user_list):
 def create_squares():
     """Generates the squares for the Q grid"""
 
-    for x in range(0,26):
-        for y in range(0,26):
+    for x in range(1,27):
+        for y in range(1,27):
             square = Square(x=x,
                             y=y,
                             fill=functions.color_green(x, y) or "#84898c")

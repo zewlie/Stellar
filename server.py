@@ -43,7 +43,7 @@ def index():
     """Homepage."""
 
     squares_dict = {}
-    for x in range(0,26):
+    for x in range(1,27):
         squares_dict[x] = {}
 
     squares = db.session.query(Square).all()

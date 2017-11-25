@@ -21,8 +21,8 @@ function gridData() {
   var data = new Array();
   var xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
   var ypos = 1;
-  var gridx = 0;
-  var gridy = 0;
+  var gridx = 1;
+  var gridy = 1;
   var width = 22;
   var height = 22;
   var click = 0;
@@ -49,7 +49,7 @@ function gridData() {
     }
     // reset the x position after a row is complete
     xpos = 1;
-    gridx = 0;
+    gridx = 1;
     // increment the y position for the next row. Move it down 50 (height variable)
     ypos += height; 
     // increment grid coords
